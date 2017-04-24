@@ -19,8 +19,8 @@ export default {
   name: 'app',
   components: {
     navMenu,
-    headerDiv,
-    breadcrumb
+    breadcrumb,
+    headerDiv
   },
   watch: {
     '$route': function () {
