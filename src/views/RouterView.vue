@@ -4,7 +4,8 @@
 
 <script>
 export default {
-  name: 'RouterView',
+  // 因为命名冲突调了1个钟bug
+  // name: 'routerView2',
   data () {
     return {
 

@@ -3,12 +3,14 @@
     <el-menu theme="dark" router :default-active="$route.path">
       <el-menu-item index="/">首页</el-menu-item>
       <el-submenu
-        :index="menu.path"
-        v-for="(menu, index) in menus">
+        :index="menu.name"
+        v-for="(menu, index) in menus"
+        key="menu.name">
         <template slot="title">{{menu.name}}</template>
         <el-menu-item 
-          :index="menu.path + subMenu.path"
-          v-for="(subMenu, subIndex) in menu.children">
+          :index="menu.path + '/' + subMenu.path"
+          v-for="(subMenu, subIndex) in menu.children"
+          key="subMenu.name">
             {{subMenu.name}}
         </el-menu-item>
       </el-submenu>
