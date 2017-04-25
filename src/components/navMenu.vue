@@ -2,18 +2,27 @@
   <div class="sidebar">
     <el-menu theme="dark" router :default-active="$route.path">
       <el-menu-item index="/">首页</el-menu-item>
-      <el-submenu index="/">
-        <template slot="title">app管理</template>
-        <el-menu-item index="/adminApp/hotSearch">热门搜索</el-menu-item>
+      <el-submenu
+        :index="menu.path"
+        v-for="(menu, index) in menus">
+        <template slot="title">{{menu.name}}</template>
+        <el-menu-item 
+          :index="menu.path + subMenu.path"
+          v-for="(subMenu, subIndex) in menu.children">
+            {{subMenu.name}}
+        </el-menu-item>
       </el-submenu>
     </el-menu>
   </div>
 </template>
 
 <script>
+import menus from '../nav-config'
+
 export default {
   data () {
     return {
+      menus
     }
   }
 }
