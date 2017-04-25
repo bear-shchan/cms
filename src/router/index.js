@@ -7,10 +7,26 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'Home',
+      name: '首页',
       component: function (resolve) {
         require(['@/views/Home'], resolve)
       }
+    },
+    {
+      path: '/adminApp',
+      name: 'app管理',
+      component: function (resolve) {
+        require(['@/views/Navigation.vue'], resolve)
+      },
+      children: [
+        {
+          path: 'hotSearch',
+          name: '热门搜索',
+          component: function (resolve) {
+            require(['@/views/HotSearch'], resolve)
+          }
+        }
+      ]
     }
   ]
 })

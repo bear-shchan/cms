@@ -4,7 +4,7 @@
     <nav-menu></nav-menu>
     <div id="content" class="content">
       <breadcrumb></breadcrumb>
-      <router-view keep-alive></router-view>
+      <router-view class="view" keep-alive></router-view>
     </div>
   </div>
 </template>
@@ -18,9 +18,9 @@ import breadcrumb from './components/breadcrumb.vue'
 export default {
   name: 'app',
   components: {
-    navMenu,
+    headerDiv,
     breadcrumb,
-    headerDiv
+    navMenu
   },
   watch: {
     '$route': function () {
@@ -38,15 +38,19 @@ export default {
   height: 100%;
 }
 .content{
-  background: none repeat scroll 0 0 #fff;
+  background: none repeat scroll 0 0 #f5f5f5;
   position: absolute;
   left: 200px;
   right: 0;
   top: 55px;
   bottom: 0;
   width: auto;
-  padding: 0px 20px 10px;
+  padding: 0px 15px 10px;
   box-sizing: border-box;
   overflow-y: scroll;
+}
+.view{
+  background-color: #fff;
+  padding: 10px;
 }
 </style>
