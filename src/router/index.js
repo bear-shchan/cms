@@ -5,7 +5,7 @@ import nav from '../nav-config'
 
 Vue.use(Router)
 
-const getComponent = name => require(`@/views/${name}.vue`)
+const getComponent = component => require(`@/views/${component}.vue`)
 
 let routes = [
   {
